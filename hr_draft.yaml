@@ -1,0 +1,201 @@
+models:
+  Office:
+    name: string
+    relationships:
+      hasMany: Department
+
+  Department:
+    name: string
+    office_id: foreign:offices.id
+    relationships:
+      hasMany: Division
+
+  Division:
+    name: string
+    department_id: foreign:departments.id
+    relationships:
+      hasMany: Unit
+
+  Unit:
+    division_id: foreign:divisions.id
+    name: string
+
+  Designation:
+    name: string
+
+  Grade_level:
+    grade: string
+    relationships:
+      hasMany: Employee
+
+  Step:
+    step: string
+    relationships:
+      hasMany: Employee
+
+  Employee:
+    first_name: string not_nullable
+    last_name: string not_nullable
+    date_of_birth: date not_nullable
+    gender: enum:Male,Female not_nullable
+    nationality: string not_nullable
+    contact_number: string not_nullable
+    city: string
+    geo_state_id: id foreign
+    geo_lga_id: id foreign
+    grade_level_id: id foreign:Grade_levels.id
+    step_id: id foreign:steps.id
+    zip_code: string(10)
+    country: string
+    hire_date: date not_nullable
+    job_title: string not_nullable
+    office_id: foreign:offices.id
+    department_id: id foreign:departments.id
+    division_id: foreign:divisions.id
+    unit_id: id foreign:units.id
+    designation: id foreign:designations.id
+    blood_group: string(5)
+    height: decimal(5,2)
+    genotype: string(5)
+    command: string(255),
+    duty_post: string(255),
+    marital_status: enum:Single,Married,Divorced,Widowed
+    next_of_kin: string(100)
+    nok_number: string(20)
+    nok_email: string(255)
+    permanent_home_address: string
+    residential_address: string
+    photograph: string(255)
+    service_number: string(50)
+    file_number: string(50)
+    fingerprint: string(255)
+    nin: string(50) not_nullable
+    passport_number: string(50)
+    exit_date: date
+    relationships:
+      hasMany: WorkHistory,EmpQualification,EmpCertification, Promotion, Deployment, Award, Dsicipline
+      hasOne:  Office, Department, Division, Unit, Designation
+
+  WorkHistory:
+    employee_id: id foreign:employees.id
+    organisation: string
+    job_title: string
+    start_date: date
+    end_date: string
+
+  EmpQualification:
+    employee_id: id foreign:employees.id
+    institution: string
+    certificate_obtained: string
+    start_date: date
+    end_date: string
+
+  EmpCertification:
+    employee_id: id foreign:employees.id
+    certification_name: string
+    issuing_authority: string
+    date_obtained: date
+
+  Promotion:
+    employee_id: id foreign:employees.id
+    old_job_title: string
+    new_job_title: string
+    promotion_date: date
+    next_promotion_due_date: date
+    created_by: string
+    relationships:
+      hasMany: User
+
+  Deployment:
+    employee_id: id foreign:employees.id
+    current_location: string
+    location_of_deployment: string
+    date_of_deployment: date
+    reason_for_deployment: string
+    created_by: id foreign:users.id
+    relationships:
+      hasMany: User
+
+  Transfer:
+    employee_id: id foreign:employees.id
+    current_location: string
+    location_of_tranfer: string
+    date_of_transfer: date
+    reason_for_transfer: string
+    created_by: id foreign:users.id
+    relationships:
+      hasMany: User
+
+  Training:
+    employee_id: id foreign:employees.id
+    training_title: string
+    training_instite: string
+    training_location: string
+    training_duration: string
+    training_date_from: date
+    training_date_to: date
+    created_by: id foreign:users.id
+    relationships:
+      hasMany: User
+
+  LeaveType:
+    leave_type_name: string not_nullable
+    description: text
+
+  Leave:
+    employee_id: id foreign:employees.id
+    Leave_type: string
+    Leave_days: string
+    Leave_date_from: date
+    Leave_date_to: date
+    leave_reason: string
+    status: enum:Pending,Approved,Rejected not_nullable
+    created_by: id foreign:users.id
+    approved_by: id foreign:users.id
+    approved_at: timestamp
+    relationships:
+      hasMany: User
+
+  Discipline:
+    employee_id: id foreign:employees.id not_nullable
+    offence_desc: text
+    action_taken: text not_nullable
+    reported_by: id foreign:users.id
+
+
+
+controllers:
+  Office:
+    resource: api
+  Department:
+    resource: api
+  Division:
+    resource: api
+  Unit:
+    resource: api
+  Designation:
+    resource: api
+  Employee:
+    resource: api
+  WorkHistory:
+    resource: api
+  EmpQualification:
+    resource: api
+  EmpCertification:
+    resource: api
+  Promotion:
+    resource: api
+  Deployment:
+    resource: api
+  Transfer:
+    resource: api
+  Training:
+    resource: api
+  LeaveType:
+    resource: api
+  Leave:
+    resource: api
+  Discipline:
+    resource: api
+
+seeders: LeaveType, Office, Department, Division, Unit, Designation

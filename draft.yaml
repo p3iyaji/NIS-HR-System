@@ -1,0 +1,119 @@
+models:
+  UserRole:
+    role_name: enum:Admin, User
+    relationships:
+      hasMany: User
+  GeoState:
+    name: string unique
+    relationships:
+      hasMany: GeoLga
+  GeoLga:
+    name: string unique
+    geo_state_id: id foreign
+
+  JobPosition:
+    position_name: string
+    department: string
+    job_description: string
+    required_qualifications: text
+    applicant_deadline: string
+    status: enum:open,close
+    deleted_at: datetime
+    relationships:
+      hasMany: ShortlistedApplicant, Applicant
+
+  Applicant:
+    first_name: string
+    last_name: string
+    date_of_birth: date
+    nin: string
+    gender: enum:Male,Female
+    address: string
+    city: string
+    geo_state_id: id foreign
+    geo_lga_id: id foreign
+    zip_postal_code: string
+    email_address: string
+    phone_number: string
+    user_id: id foreign
+    job_position_id: id foreign:job_positions.id
+    relationships:
+      hasMany: WorkExperience,Qualification,Certification,Reference
+      hasOne:  ShortlistedApplicant, JobApplication, InterviewResult
+
+  WorkExperience:
+    applicant_id: id foreign:applicants.id
+    organisation: string
+    job_title: string
+    start_date: date
+    end_date: string
+
+  Qualification:
+    applicant_id: id foreign:applicants.id
+    institution: string
+    certificate_obtained: string
+    start_date: date
+    end_date: string
+
+  Certification:
+    applicant_id: id foreign:applicants.id
+    certification_name: string
+    issuing_authority: string
+    date_obtained: date
+
+  Reference:
+    applicant_id: id foreign:applicants.id
+    referrer_name: string
+    referrer_email: string
+    referrer_mobile: string
+    relationship_applicant: string
+
+  JobApplication:
+    applicant_id: id foreign:applicants.id
+    job_position_id: id foreign:job_positions.id
+    application_date: date
+    status: enum:pending,in-review,accepted,rejected
+    screening_date: date
+    comment_note: text
+
+  ShortlistedApplicant:
+    job_position_id: id foreign:job_positions.id
+    applicant_id: id foreign:applicants.id
+    interview_date: datetime
+    status: enum:pending-interview,interviewed,accepted,rejected
+  InterviewCriteria:
+    criteria: string unique
+  InterviewResult:
+    interview_criteria_id: id foreign
+    applicant_id: id foreign
+    response: boolean
+
+controllers:
+  UserRole:
+    resource: api
+  GeoState:
+    resource: api
+  GeoLga:
+    resource: api
+  Applicant:
+    resource: api
+  WorkExperience:
+    resource: api
+  Qualification:
+    resource: api
+  Certification:
+    resource: api
+  Reference:
+    resource: api
+  JobPosition:
+    resource: api
+  JobApplication:
+    resource: api
+  ShortlistedApplicant:
+    resource: api
+  InterviewCriteria:
+    resource: api
+  InterviewResult:
+    resource: api
+
+seeders: InterviewCriteria, InterviewResult, UserRole, JobPosition

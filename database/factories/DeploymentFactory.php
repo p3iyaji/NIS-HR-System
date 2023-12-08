@@ -1,0 +1,34 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use App\Models\Deployment;
+use App\Models\Employee;
+use App\Models\User;
+
+class DeploymentFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Deployment::class;
+
+    /**
+     * Define the model's default state.
+     */
+    public function definition(): array
+    {
+        return [
+            'employee_id' => Employee::factory(),
+            'current_location' => $this->faker->word,
+            'location_of_deployment' => $this->faker->word,
+            'date_of_deployment' => $this->faker->date(),
+            'reason_for_deployment' => $this->faker->word,
+            'created_by' => User::factory(),
+        ];
+    }
+}

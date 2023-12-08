@@ -1,0 +1,192 @@
+created:
+    - app/Http/Controllers/OfficeController.php
+    - app/Http/Controllers/DepartmentController.php
+    - app/Http/Controllers/DivisionController.php
+    - app/Http/Controllers/UnitController.php
+    - app/Http/Controllers/DesignationController.php
+    - app/Http/Controllers/EmployeeController.php
+    - app/Http/Controllers/WorkHistoryController.php
+    - app/Http/Controllers/EmpQualificationController.php
+    - app/Http/Controllers/EmpCertificationController.php
+    - app/Http/Controllers/PromotionController.php
+    - app/Http/Controllers/DeploymentController.php
+    - app/Http/Controllers/TransferController.php
+    - app/Http/Controllers/TrainingController.php
+    - app/Http/Controllers/LeaveTypeController.php
+    - app/Http/Controllers/LeaveController.php
+    - app/Http/Controllers/DisciplineController.php
+    - database/factories/OfficeFactory.php
+    - database/factories/DepartmentFactory.php
+    - database/factories/DivisionFactory.php
+    - database/factories/UnitFactory.php
+    - database/factories/DesignationFactory.php
+    - database/factories/GradeLevelFactory.php
+    - database/factories/StepFactory.php
+    - database/factories/EmployeeFactory.php
+    - database/factories/WorkHistoryFactory.php
+    - database/factories/EmpQualificationFactory.php
+    - database/factories/EmpCertificationFactory.php
+    - database/factories/PromotionFactory.php
+    - database/factories/DeploymentFactory.php
+    - database/factories/TransferFactory.php
+    - database/factories/TrainingFactory.php
+    - database/factories/LeaveTypeFactory.php
+    - database/factories/LeaveFactory.php
+    - database/factories/DisciplineFactory.php
+    - database/migrations/2023_11_06_051431_create_offices_table.php
+    - database/migrations/2023_11_06_051432_create_departments_table.php
+    - database/migrations/2023_11_06_051433_create_divisions_table.php
+    - database/migrations/2023_11_06_051434_create_units_table.php
+    - database/migrations/2023_11_06_051435_create_designations_table.php
+    - database/migrations/2023_11_06_051436_create_grade_levels_table.php
+    - database/migrations/2023_11_06_051437_create_steps_table.php
+    - database/migrations/2023_11_06_051438_create_employees_table.php
+    - database/migrations/2023_11_06_051439_create_work_histories_table.php
+    - database/migrations/2023_11_06_051440_create_emp_qualifications_table.php
+    - database/migrations/2023_11_06_051441_create_emp_certifications_table.php
+    - database/migrations/2023_11_06_051442_create_promotions_table.php
+    - database/migrations/2023_11_06_051443_create_deployments_table.php
+    - database/migrations/2023_11_06_051444_create_transfers_table.php
+    - database/migrations/2023_11_06_051445_create_trainings_table.php
+    - database/migrations/2023_11_06_051446_create_leave_types_table.php
+    - database/migrations/2023_11_06_051447_create_leaves_table.php
+    - database/migrations/2023_11_06_051448_create_disciplines_table.php
+    - app/Models/Office.php
+    - app/Models/Department.php
+    - app/Models/Division.php
+    - app/Models/Unit.php
+    - app/Models/Designation.php
+    - app/Models/Grade_level.php
+    - app/Models/Step.php
+    - app/Models/Employee.php
+    - app/Models/WorkHistory.php
+    - app/Models/EmpQualification.php
+    - app/Models/EmpCertification.php
+    - app/Models/Promotion.php
+    - app/Models/Deployment.php
+    - app/Models/Transfer.php
+    - app/Models/Training.php
+    - app/Models/LeaveType.php
+    - app/Models/Leave.php
+    - app/Models/Discipline.php
+    - database/seeders/LeaveTypeSeeder.php
+    - database/seeders/OfficeSeeder.php
+    - database/seeders/DepartmentSeeder.php
+    - database/seeders/DivisionSeeder.php
+    - database/seeders/UnitSeeder.php
+    - database/seeders/DesignationSeeder.php
+    - tests/Feature/Http/Controllers/OfficeControllerTest.php
+    - tests/Feature/Http/Controllers/DepartmentControllerTest.php
+    - tests/Feature/Http/Controllers/DivisionControllerTest.php
+    - tests/Feature/Http/Controllers/UnitControllerTest.php
+    - tests/Feature/Http/Controllers/DesignationControllerTest.php
+    - tests/Feature/Http/Controllers/EmployeeControllerTest.php
+    - tests/Feature/Http/Controllers/WorkHistoryControllerTest.php
+    - tests/Feature/Http/Controllers/EmpQualificationControllerTest.php
+    - tests/Feature/Http/Controllers/EmpCertificationControllerTest.php
+    - tests/Feature/Http/Controllers/PromotionControllerTest.php
+    - tests/Feature/Http/Controllers/DeploymentControllerTest.php
+    - tests/Feature/Http/Controllers/TransferControllerTest.php
+    - tests/Feature/Http/Controllers/TrainingControllerTest.php
+    - tests/Feature/Http/Controllers/LeaveTypeControllerTest.php
+    - tests/Feature/Http/Controllers/LeaveControllerTest.php
+    - tests/Feature/Http/Controllers/DisciplineControllerTest.php
+    - app/Http/Requests/OfficeStoreRequest.php
+    - app/Http/Requests/OfficeUpdateRequest.php
+    - app/Http/Requests/DepartmentStoreRequest.php
+    - app/Http/Requests/DepartmentUpdateRequest.php
+    - app/Http/Requests/DivisionStoreRequest.php
+    - app/Http/Requests/DivisionUpdateRequest.php
+    - app/Http/Requests/UnitStoreRequest.php
+    - app/Http/Requests/UnitUpdateRequest.php
+    - app/Http/Requests/DesignationStoreRequest.php
+    - app/Http/Requests/DesignationUpdateRequest.php
+    - app/Http/Requests/EmployeeStoreRequest.php
+    - app/Http/Requests/EmployeeUpdateRequest.php
+    - app/Http/Requests/WorkHistoryStoreRequest.php
+    - app/Http/Requests/WorkHistoryUpdateRequest.php
+    - app/Http/Requests/EmpQualificationStoreRequest.php
+    - app/Http/Requests/EmpQualificationUpdateRequest.php
+    - app/Http/Requests/EmpCertificationStoreRequest.php
+    - app/Http/Requests/EmpCertificationUpdateRequest.php
+    - app/Http/Requests/PromotionStoreRequest.php
+    - app/Http/Requests/PromotionUpdateRequest.php
+    - app/Http/Requests/DeploymentStoreRequest.php
+    - app/Http/Requests/DeploymentUpdateRequest.php
+    - app/Http/Requests/TransferStoreRequest.php
+    - app/Http/Requests/TransferUpdateRequest.php
+    - app/Http/Requests/TrainingStoreRequest.php
+    - app/Http/Requests/TrainingUpdateRequest.php
+    - app/Http/Requests/LeaveTypeStoreRequest.php
+    - app/Http/Requests/LeaveTypeUpdateRequest.php
+    - app/Http/Requests/LeaveStoreRequest.php
+    - app/Http/Requests/LeaveUpdateRequest.php
+    - app/Http/Requests/DisciplineStoreRequest.php
+    - app/Http/Requests/DisciplineUpdateRequest.php
+    - app/Http/Resources/OfficeCollection.php
+    - app/Http/Resources/OfficeResource.php
+    - app/Http/Resources/DepartmentCollection.php
+    - app/Http/Resources/DepartmentResource.php
+    - app/Http/Resources/DivisionCollection.php
+    - app/Http/Resources/DivisionResource.php
+    - app/Http/Resources/UnitCollection.php
+    - app/Http/Resources/UnitResource.php
+    - app/Http/Resources/DesignationCollection.php
+    - app/Http/Resources/DesignationResource.php
+    - app/Http/Resources/EmployeeCollection.php
+    - app/Http/Resources/EmployeeResource.php
+    - app/Http/Resources/WorkHistoryCollection.php
+    - app/Http/Resources/WorkHistoryResource.php
+    - app/Http/Resources/EmpQualificationCollection.php
+    - app/Http/Resources/EmpQualificationResource.php
+    - app/Http/Resources/EmpCertificationCollection.php
+    - app/Http/Resources/EmpCertificationResource.php
+    - app/Http/Resources/PromotionCollection.php
+    - app/Http/Resources/PromotionResource.php
+    - app/Http/Resources/DeploymentCollection.php
+    - app/Http/Resources/DeploymentResource.php
+    - app/Http/Resources/TransferCollection.php
+    - app/Http/Resources/TransferResource.php
+    - app/Http/Resources/TrainingCollection.php
+    - app/Http/Resources/TrainingResource.php
+    - app/Http/Resources/LeaveTypeCollection.php
+    - app/Http/Resources/LeaveTypeResource.php
+    - app/Http/Resources/LeafCollection.php
+    - app/Http/Resources/LeaveResource.php
+    - app/Http/Resources/DisciplineCollection.php
+    - app/Http/Resources/DisciplineResource.php
+updated:
+    - routes/api.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    UserRole: { role_name: 'enum:Admin, User', relationships: { hasMany: User } }
+    GeoState: { name: 'string unique', relationships: { hasMany: GeoLga } }
+    GeoLga: { name: 'string unique', geo_state_id: 'id foreign' }
+    JobPosition: { position_name: string, department: string, job_description: string, required_qualifications: text, applicant_deadline: string, status: 'enum:open,close', deleted_at: datetime, relationships: { hasMany: 'ShortlistedApplicant, Applicant' } }
+    Applicant: { first_name: string, last_name: string, date_of_birth: date, nin: string, gender: 'enum:Male,Female', address: string, city: string, geo_state_id: 'id foreign', geo_lga_id: 'id foreign', zip_postal_code: string, email_address: string, phone_number: string, user_id: 'id foreign', job_position_id: 'id foreign:job_positions.id', relationships: { hasMany: 'WorkExperience,Qualification,Certification,Reference', hasOne: 'ShortlistedApplicant, JobApplication' } }
+    WorkExperience: { applicant_id: 'id foreign:applicants.id', organisation: string, job_title: string, start_date: date, end_date: string }
+    Qualification: { applicant_id: 'id foreign:applicants.id', institution: string, certificate_obtained: string, start_date: date, end_date: string }
+    Certification: { applicant_id: 'id foreign:applicants.id', certification_name: string, issuing_authority: string, date_obtained: date }
+    Reference: { applicant_id: 'id foreign:applicants.id', referrer_name: string, referrer_email: string, referrer_mobile: string, relationship_applicant: string }
+    JobApplication: { applicant_id: 'id foreign:applicants.id', job_position_id: 'id foreign:job_positions.id', application_date: date, status: 'enum:pending,in-review,accepted,rejected', screening_date: date, comment_note: text }
+    ShortlistedApplicant: { job_position_id: 'id foreign:job_positions.id', applicant_id: 'id foreign:applicants.id', interview_date: datetime, status: 'enum:pending-interview,interviewed,accepted,rejected' }
+    InterviewCriteria: { criteria: 'string unique' }
+    InterviewResult: { interview_criteria_id: 'id foreign', applicant_id: 'id foreign', response: boolean }
+    Office: { name: string, relationships: { hasMany: Department } }
+    Department: { name: string, office_id: 'foreign:offices.id', relationships: { hasMany: Division } }
+    Division: { name: string, department_id: 'foreign:departments.id', relationships: { hasMany: Unit } }
+    Unit: { division_id: 'foreign:divisions.id', name: string }
+    Designation: { name: string }
+    Grade_level: { grade: string, relationships: { hasMany: Employee } }
+    Step: { step: string, relationships: { hasMany: Employee } }
+    Employee: { first_name: 'string not_nullable', last_name: 'string not_nullable', date_of_birth: 'date not_nullable', gender: 'enum:Male,Female not_nullable', nationality: 'string not_nullable', contact_number: 'string not_nullable', city: string, geo_state_id: 'id foreign', geo_lga_id: 'id foreign', grade_level_id: 'id foreign:Grade_levels.id', step_id: 'id foreign:steps.id', zip_code: string(10), country: string, hire_date: 'date not_nullable', job_title: 'string not_nullable', office_id: 'foreign:offices.id', department_id: 'id foreign:departments.id', division_id: 'foreign:divisions.id', unit_id: 'id foreign:units.id', designation: 'id foreign:designations.id', blood_group: string(5), height: 'decimal(5,2)', genotype: string(5), command: 'string(255),', duty_post: 'string(255),', marital_status: 'enum:Single,Married,Divorced,Widowed', next_of_kin: string(100), nok_number: string(20), nok_email: string(255), permanent_home_address: string, residential_address: string, photograph: string(255), service_number: string(50), file_number: string(50), fingerprint: string(255), nin: 'string(50) not_nullable', passport_number: string(50), exit_date: date, relationships: { hasMany: 'WorkHistory,EmpQualification,EmpCertification, Promotion, Deployment, Award, Dsicipline', hasOne: 'Office, Department, Division, Unit, Designation' } }
+    WorkHistory: { employee_id: 'id foreign:employees.id', organisation: string, job_title: string, start_date: date, end_date: string }
+    EmpQualification: { employee_id: 'id foreign:employees.id', institution: string, certificate_obtained: string, start_date: date, end_date: string }
+    EmpCertification: { employee_id: 'id foreign:employees.id', certification_name: string, issuing_authority: string, date_obtained: date }
+    Promotion: { employee_id: 'id foreign:employees.id', old_job_title: string, new_job_title: string, promotion_date: date, next_promotion_due_date: date, created_by: string, relationships: { hasMany: User } }
+    Deployment: { employee_id: 'id foreign:employees.id', current_location: string, location_of_deployment: string, date_of_deployment: date, reason_for_deployment: string, created_by: 'id foreign:users.id', relationships: { hasMany: User } }
+    Transfer: { employee_id: 'id foreign:employees.id', current_location: string, location_of_tranfer: string, date_of_transfer: date, reason_for_transfer: string, created_by: 'id foreign:users.id', relationships: { hasMany: User } }
+    Training: { employee_id: 'id foreign:employees.id', training_title: string, training_instite: string, training_location: string, training_duration: string, training_date_from: date, training_date_to: date, created_by: 'id foreign:users.id', relationships: { hasMany: User } }
+    LeaveType: { leave_type_name: 'string not_nullable', description: text }
+    Leave: { employee_id: 'id foreign:employees.id', Leave_type: string, Leave_days: string, Leave_date_from: date, Leave_date_to: date, leave_reason: string, status: 'enum:Pending,Approved,Rejected not_nullable', created_by: 'id foreign:users.id', approved_by: 'id foreign:users.id', approved_at: timestamp, relationships: { hasMany: User } }
+    Discipline: { employee_id: 'id foreign:employees.id not_nullable', offence_desc: text, action_taken: 'text not_nullable', reported_by: 'id foreign:users.id' }

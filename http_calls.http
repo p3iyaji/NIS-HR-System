@@ -1,0 +1,357 @@
+POST http://localhost:8000/api/auth/login HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "sammiebliss@gmail.com",
+    "password": "password"
+}
+
+###
+POST http://localhost:8000/api/auth/register HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|XLHPMdeHwN4aPtSFUbAb1UjrLnANy398tWVidzzv
+
+{
+    "first_name": "Sammie",
+    "last_name": "Bliss",
+    "user_role_id": 2,
+    "email": "sammiebliss@gmail.com",
+    "password": "password",
+    "password_confirmation": "password"
+}
+
+###
+POST http://localhost:8000/api/applicant HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "date_of_birth": "1990-05-15",
+    "nin": "1234567890",
+    "gender": "Male",
+    "address": "123 Main Street",
+    "city": "Example City",
+    "geo_state_id": 1,
+    "geo_lga_id": 10,
+    "zip_postal_code": "12345",
+    "email_address": "applicant@example.com",
+    "phone_number": "+1234567890",
+    "job_position_id": 1
+}
+
+###
+PUT http://localhost:8000/api/applicant/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|IF46mqnaAYJKvpKlgl0VvKsjbEeQjdfZbMJ4szUx6006a32a
+
+{
+    "date_of_birth": "1990-05-15",
+    "nin": "1234567890",
+    "gender": "Male",
+    "address": "123 Main Street",
+    "city": "Example City",
+    "geo_state_id": 1,
+    "geo_lga_id": 10,
+    "zip_postal_code": "12345",
+    "email_address": "applicant@example.com",
+    "phone_number": "+1234567890",
+    "job_position_id": 1
+}
+
+###
+###
+GET http://localhost:8000/api/applicant HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+###
+POST http://localhost:8000/api/work-experience HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "workExperiences": [
+        {
+            "organisation": "Company A",
+            "job_title": "Software Engineer",
+            "start_date": "2022-01-01",
+            "end_date": "2023-03-15"
+        },
+        {
+            "organisation": "Company B",
+            "job_title": "Project Manager",
+            "start_date": "2021-05-10",
+            "end_date": "2022-12-31"
+        },
+        {
+            "organisation": "Company C",
+            "job_title": "Data Analyst",
+            "start_date": "2023-02-15",
+            "end_date": "2023-07-30"
+        }
+        // Add more work experience records as needed
+    ]
+}
+
+###
+POST http://localhost:8000/api/qualification HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "qualifications": [
+        {
+            "institution": "University A",
+            "certificate_obtained": "Bachelor's Degree",
+            "start_date": "2018-09-01",
+            "end_date": "2022-05-30"
+        },
+        {
+            "institution": "College B",
+            "certificate_obtained": "Diploma in Computer Science",
+            "start_date": "2016-03-15",
+            "end_date": "2018-02-28"
+        }
+        // Add more qualification records as needed
+    ]
+}
+
+###
+POST http://localhost:8000/api/certification HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "certifications": [
+        {
+            "certification_name": "Certification A",
+            "issuing_authority": "Authority A",
+            "date_obtained": "2021-08-15"
+        },
+        {
+            "certification_name": "Certification B",
+            "issuing_authority": "Authority B",
+            "date_obtained": "2022-03-22"
+        }
+        // Add more certification records as needed
+    ]
+}
+
+###
+POST http://localhost:8000/api/reference HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "references": [
+        {
+            "applicant_id": 1,
+            "referrer_name": "John Doe",
+            "referrer_email": "john@example.com",
+            "referrer_mobile": "123-456-7890",
+            "relationship_applicant": "Supervisor"
+        },
+        {
+            "applicant_id": 2,
+            "referrer_name": "Jane Smith",
+            "referrer_email": "jane@example.com",
+            "referrer_mobile": "987-654-3210",
+            "relationship_applicant": "Colleague"
+        }
+        // Add more reference records as needed
+    ]
+}
+
+###
+GET http://localhost:8000/api/geo-state HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+###
+GET http://localhost:8000/api/geo-lga HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+###
+POST http://localhost:8000/api/submit-application HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "cover_letter": "kjshgajkghcjgsdjkcgdkjgckjsgjkc",
+    "is_submitted": true
+}
+
+###
+GET http://localhost:8000/api/admin/verify-nin/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+###
+POST http://localhost:8000/api/admin/cbt-invitation HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "applicant_id": 1,
+    "cbt_date": "10-12-2023"
+}
+
+###
+POST http://localhost:8000/api/admin/physical-verification HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "applicant_id": 1,
+    "interview_date": "10-12-2023"
+}
+
+###
+GET http://localhost:8000/api/admin/application-completed/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+###
+GET http://localhost:8000/api/applicant HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+###
+GET http://localhost:8000/api/applicant/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+###
+POST http://localhost:8000/api/admin/shortlisted-applicant HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+{
+    "job_position_id": 1,
+    "applicant_id": 1,
+    "interview_date": "2023-10-15",
+    "comment": "Your optional comment"
+}
+
+###
+GET http://localhost:8000/api/admin/shortlisted-applicant HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VFnyr8vhsO6uESPMoLoLbwLFOtY2pqzOdfuFWUNY254ede46
+
+###
+GET http://localhost:8000/api/geo-state/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|eMAuibhcPpYQGzyapey8MB7zB0PC4niQZkGmYVP31d0e9e49
+
+###
+GET http://localhost:8000/api/interview-criteria HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VKohgL5NPWKKw0REi9QRPpwKPgNPOZ5nKEpKkaWff89de1c5
+
+###
+POST http://localhost:8000/api/interview-result HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|VKohgL5NPWKKw0REi9QRPpwKPgNPOZ5nKEpKkaWff89de1c5
+
+ {
+    "interview_criteria_id": 1,
+    "applicant_id": 1,
+    "response": 1
+ }
+
+
+
+###
+PATCH http://localhost:8000/api/office/17 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|pimxG0RICOIedXhtjt07OYUqhbgSmfT55yhEFbqHcf55fae0
+
+{
+    "id": 17,
+    "name":"Kaduna Office",
+    "location":"Kaduna2288"
+}
+
+
+
+###
+GET  http://localhost:8000/api/office HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|pimxG0RICOIedXhtjt07OYUqhbgSmfT55yhEFbqHcf55fae0
+
+
+###
+DELETE  http://localhost:8000/api/office/2 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|pimxG0RICOIedXhtjt07OYUqhbgSmfT55yhEFbqHcf55fae0
+
+
+
+###
+POST http://localhost:8000/api/leave HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|pimxG0RICOIedXhtjt07OYUqhbgSmfT55yhEFbqHcf55fae0
+
+ {
+    "interview_criteria_id": 1,
+    "applicant_id": 1,
+    "response": 1
+ }
+
+###
+GET http://localhost:8000/api/leave/1 HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|pimxG0RICOIedXhtjt07OYUqhbgSmfT55yhEFbqHcf55fae0
+
+
+###
+GET http://localhost:8000/api/leave-type HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|pimxG0RICOIedXhtjt07OYUqhbgSmfT55yhEFbqHcf55fae0
+
+
+
+### 
+POST http://localhost:8000/api/transfer HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|pimxG0RICOIedXhtjt07OYUqhbgSmfT55yhEFbqHcf55fae0
+
+{
+    "employee_id":"4",
+    "current_location":"Abuja",
+    "location_of_tranfer":"Bida",
+    "date_of_transfer":"2023-11-19",
+    "reason_for_transfer":"hjhjgfhhjgj",
+    "created_by": "1",
+}
